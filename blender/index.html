@@ -93,6 +93,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../note/">注意事项</a>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../wsl/">wsl 安装与配置和卸载</a>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">工具与资源</span></p>
 <ul class="current">
@@ -119,6 +121,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#6-从-blender-到模拟器">6. 从 Blender 到模拟器 </a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#只导出需要的模型">只导出需要的模型</a>
+</li>
+</ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#7-学习资源">7. 学习资源 </a>
 </li>
@@ -131,8 +137,6 @@
 </ul>
 <p class="caption"><span class="caption-text">学习与论文</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../bib_reference_guide/">Latex文献引用编译办法</a>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../undergraduate/">本科毕业设计</a>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../paper/avf/">论文成果：AVF-BEL 视听融合</a>
@@ -223,7 +227,8 @@
 <p>国内网络下下载速度较慢时，可以使用高校或云厂商的镜像站，例如：</p>
 <ul>
 <li>清华大学 TUNA：<a href="https://mirrors.tuna.tsinghua.edu.cn/blender/">https://mirrors.tuna.tsinghua.edu.cn/blender/</a></li>
-<li>中国科学技术大学：<a href="https://mirrors.ustc.edu.cn/blender/">https://mirrors.ustc.edu.cn/blender/</a></li>
+<li>南京大学：<a href="https://mirror.nju.edu.cn/blender/">https://mirror.nju.edu.cn/blender/</a></li>
+<li>阿里云开源镜像站：<a href="https://mirrors.aliyun.com/blender/release/Blender4.3/">https://mirrors.aliyun.com/blender/release/Blender4.3/</a></li>
 </ul>
 <p>各平台的获取方式：</p>
 <table>
@@ -384,13 +389,21 @@
 <li><strong>确认场景单位与目标引擎一致</strong>，避免模型整体过大或过小；</li>
 <li><strong>确认模型朝向</strong>：不同软件的正向轴约定不同（Blender 默认 Z 轴向上，部分引擎为 Y 轴向上），导出设置中通常有相应的轴向选项，导入后偏差较大时优先检查这一项。</li>
 </ol>
-<p>导出完成后，建议在引擎中实际导入一次验证效果，而不是只看 Blender 里的预览。</p>
+<h3 id="只导出需要的模型">只导出需要的模型</h3>
+<p>默认场景里还有摄像机和灯光，制作过程中也可能留下参考物体。导出单个资产时，可以按下面的顺序操作：</p>
+<ol>
+<li>先将工程保存为 <code>.blend</code> 文件，保留后续编辑所需的内容。</li>
+<li>在物体模式下选中要交付的物体。带骨骼的模型需要同时选中网格和对应骨架，避免只导出模型外形。</li>
+<li>打开「File → Export → FBX」，在导出选项的「Include → Limit to」中勾选「Selected Objects」，将范围限制为选中的物体。这个选项用于普通导出，不适用于批量导出。</li>
+<li>导出后，在一个空场景中重新导入，检查物体数量、尺寸和朝向，确认没有混入摄像机、灯光或参考物体，再到目标引擎中核对效果。</li>
+</ol>
+<p>FBX 用于交付模型，<code>.blend</code> 用于继续编辑，两者建议一并保留。选项的具体说明可查看 <a href="https://docs.blender.org/manual/en/4.4/addons/import_export/scene_fbx.html">Blender 官方 FBX 手册</a>。</p>
 <p>社区文档站为 <a href="https://openhutb.github.io/">https://openhutb.github.io/</a>，模型接入模拟器的具体流程以该站对应项目的说明为准；遇到问题可以在相关仓库的 Issues 页面提出。</p>
 <h2 id="7-学习资源">7. 学习资源 <span id="learn"></span></h2>
 <ul>
 <li>Blender 官方手册（含简体中文）：<a href="https://docs.blender.org/manual/zh-hans/">https://docs.blender.org/manual/zh-hans/</a></li>
 <li>Blender 官方教程页：<a href="https://www.blender.org/support/tutorials/">https://www.blender.org/support/tutorials/</a></li>
-<li>Blender Studio 官方基础培训（免费，持续更新）：<a href="https://studio.blender.org/training/blender-fundamentals/">https://studio.blender.org/training/blender-fundamentals/</a></li>
+<li>Blender Studio 官方基础培训（免费，持续更新）：<a href="https://studio.blender.org/training/">https://studio.blender.org/training/</a></li>
 </ul>
 <p>学习建议：不必系统看完整套课程。先用默认场景里的立方体把「旋转视角、移动物体、切到编辑模式改形状」这几件事做完一遍，再带着具体目标去查对应章节，效率更高。</p>
 <h2 id="8-常见问题">8. 常见问题 <span id="faq"></span></h2>
