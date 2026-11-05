@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://openhutb.github.io/.github/resolve_conflict/" rel="canonical"/>
 <link href="../img/favicon.ico" rel="shortcut icon"/>
 <title>使用 TortoiseGit 解决冲突 - 社区介绍</title>
 <link href="../css/theme.css" rel="stylesheet"/>
@@ -14,7 +14,7 @@
         // Current page data
         var mkdocs_page_name = "\u4f7f\u7528 TortoiseGit \u89e3\u51b3\u51b2\u7a81";
         var mkdocs_page_input_path = "resolve_conflict.md";
-        var mkdocs_page_url = null;
+        var mkdocs_page_url = "/.github/resolve_conflict/";
       </script>
 <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
@@ -30,13 +30,17 @@
 <a class="icon icon-home" href=".."> 社区介绍
         </a><div role="search">
 <form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
-<input aria-label="Search docs" name="q" placeholder="搜索文档" title="Type search term here" type="text"/>
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
 </form>
 </div>
 </div>
 <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="..">首页</a>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../simulator/">模拟器简介</a>
 </li>
 </ul>
 <ul>
@@ -53,10 +57,6 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../paper_tips/">论文写作技巧</a>
-</li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../bib_reference_guide/">Latex文献引用编译办法</a>
 </li>
 </ul>
 <ul>
@@ -85,7 +85,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../pycharm-tutorial/">PyCharm 教程</a>
 </li>
-<li class="toctree-l1 current"><a class="reference internal current" href="#">使用 TortoiseGit 解决冲突</a>
+<li class="toctree-l1 current"><a class="reference internal current" href="./">使用 TortoiseGit 解决冲突</a>
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="#保存后还需要做什么">保存后还需要做什么</a>
 </li>
@@ -101,11 +101,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../wsl/">wsl 安装与配置和卸载</a>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../submit/">文档修改与提交指南</a>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">工具与资源</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/">模拟器演示：涉水效果</a>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/">开源工具列表</a>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../blender/">三维建模软件 Blender 介绍</a>
@@ -115,6 +115,8 @@
 </ul>
 <p class="caption"><span class="caption-text">学习与论文</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../bib_reference_guide/">Latex文献引用编译办法</a>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../undergraduate/">本科毕业设计</a>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../paper/avf/">论文成果：AVF-BEL 视听融合</a>
@@ -139,7 +141,7 @@
 <li class="breadcrumb-item">贡献相关</li>
 <li class="breadcrumb-item active">使用 TortoiseGit 解决冲突</li>
 <li class="wy-breadcrumbs-aside">
-<a href="https://github.com/OpenHUTB/.github/edit/master/docs/resolve_conflict.md"> 编辑页面</a>
+<a class="icon icon-github" href="https://github.com/OpenHUTB/.github/edit/master/docs/resolve_conflict.md"> Edit on GitHub</a>
 </li>
 </ul>
 <hr/>
@@ -157,7 +159,7 @@
 <p>可以使用任何编辑器手动解决冲突，也可以通过 TortoiseGit 提供的菜单解决冲突：选中冲突文件，在右键菜单中选择<code>TortoiseGit</code> → <code>Edit Conflicts</code> ，启动外部合并工具/冲突编辑器手动解决冲突。</p>
 <p><img alt="" src="../img/resolve_conflict.jpg"/></p>
 <p>图中的左右窗口用于比较两个版本，下方窗口显示合并结果。操作前先查看窗口标题中的文件名和版本，确认哪边是当前版本、哪边是要合入的版本；要合入的内容也可能来自另一个本地分支，不能只按“远程”和“本地”判断。</p>
-<p>在合并处,鼠标右击:</p>
+<p>在合并处，鼠标右击：</p>
 <ol>
 <li><code>Use text block from left</code>：保留左侧选中的内容。</li>
 <li><code>Use text block from right</code>：保留右侧选中的内容。</li>
@@ -186,14 +188,16 @@
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../pycharm-tutorial/" title="PyCharm 教程"><span class="icon icon-circle-arrow-left"></span> 前一页</a>
-<a class="btn btn-neutral float-right" href="../dev/merge_commit/" title="合并提交">后一页 <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-left" href="../pycharm-tutorial/" title="PyCharm 教程"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../dev/merge_commit/" title="合并提交">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
 <!-- Copyright etc -->
 <p>OpenHUTB 版权所有 © 2026</p>
 </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
 </div>
 </div>
@@ -202,10 +206,10 @@
 <div aria-label="Versions" class="rst-versions" role="note">
 <span class="rst-current-version" data-toggle="rst-current-version">
 <span>
-<a href="https://github.com/OpenHUTB/.github" style="color: #fcfcfc">OpenHUTB</a>
+<a class="fa fa-github" href="https://github.com/OpenHUTB/.github" style="color: #fcfcfc"> GitHub</a>
 </span>
-<span><a href="../pycharm-tutorial/" style="color: #fcfcfc">« 前一页</a></span>
-<span><a href="../dev/merge_commit/" style="color: #fcfcfc">后一页 »</a></span>
+<span><a href="../pycharm-tutorial/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../dev/merge_commit/" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>
 <script src="../js/jquery-3.6.0.min.js"></script>
