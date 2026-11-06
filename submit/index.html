@@ -169,11 +169,13 @@
 <p>下载后会得到一个 <code>.exe</code> 文件，双击运行安装：
 <a href="https://visualstudio.microsoft.com/zh-hans/downloads/">https://visualstudio.microsoft.com/zh-hans/downloads/</a></p>
 <h2 id="3-克隆仓库">3. 克隆仓库</h2>
-<p>（</p>
 <blockquote>
 <p><strong>注意</strong>：该命令中的 <code>{用户名}</code> 请替换为自己的用户名。</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/用户名/.github.git
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/<span class="o">{</span>用户名<span class="o">}</span>/.github.git
+</code></pre></div>
+<p>克隆完成后进入仓库目录：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>.github
 </code></pre></div>
 <h2 id="4-介绍-github-文件结构">4. 介绍 .github 文件结构</h2>
 <ul>
@@ -219,7 +221,7 @@
 <p><strong>在其他 <code>.md</code> 文件加入跳转链接格式：</strong></p>
 <div class="highlight"><pre><span></span><code>[<span class="nt">标题</span>](<span class="na">.md文件路径</span>)
 </code></pre></div>
-<p>（如果两个 <code>.md</code> 文件在同一个目录下，括号里可直接填添加文档的 <code>.md</code> 文件）
+<p>（如果两个 <code>.md</code> 文件在同一个目录下，括号里直接写该文件名即可）
 例如：</p>
 <div class="highlight"><pre><span></span><code>[<span class="nt">HoloOcean Windows 搭建教程</span>](<span class="na">HoloOcean-Windows-Setup.md</span>)
 </code></pre></div>
